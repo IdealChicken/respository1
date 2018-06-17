@@ -32,7 +32,7 @@ randomPosition = function(newplayer){
 io.on('connection', function(socket){
 		//Create new player ojbect and add it to the utility playerCount object list
 		//But only if a player with the same ip doesn't exist already
-		if(!utility.contains(playerCount, socket.handshake.address)){
+		if(!utility.contains(playerCount, socket.handshake.address)){ 
 			var newPlayer = new player.Player(socket.id, socket.handshake.address);
 			randomPosition(newPlayer);
 			playerCount.push(newPlayer);
