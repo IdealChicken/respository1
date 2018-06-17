@@ -34,7 +34,7 @@ io.on('connection', function(socket){
 		//But only if a player with the same ip doesn't exist already
 		if(!utility.contains(playerCount, socket.handshake.address)){ 
 			var newPlayer = new player.Player(socket.id, socket.handshake.address);
-			randomPosition(newPlayer);
+			randomPosition(newPlayer); 
 			playerCount.push(newPlayer);
 			console.log('New player created/ ' + newPlayer.ip + ' // ' + newPlayer.x + ':' + newPlayer.y + ' (' + playerCount.length + ')');
 		}
